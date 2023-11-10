@@ -2,6 +2,7 @@ package com.app.requerimiento29.uploadAndDownload.controller;
 
 import java.nio.charset.StandardCharsets;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -21,6 +22,7 @@ import com.app.requerimiento29.uploadAndDownload.service.UploadAndDownloadServic
 @RequestMapping("/api.dian-descuento/v1/file")
 public class UploadAndDownloadController {
 
+    @Autowired
     private final UploadAndDownloadService uploadAndDownloadService;
 
     public UploadAndDownloadController(UploadAndDownloadService uploadAndDownloadService) {

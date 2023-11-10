@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ public class ConsultsController {
     //Date when consults can be done
     private static final LocalDate consultStart = LocalDate.of(2023, Month.AUGUST,1);
 
+    @Autowired
     private final ConsultService consultService;
 
     public ConsultsController(ConsultService consultService) {

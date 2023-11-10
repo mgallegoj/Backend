@@ -7,6 +7,7 @@ import java.time.Month;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,8 @@ public class RegistrationController {
 
 	private static final LocalDate endRegistrations = LocalDate.of(2023, Month.DECEMBER ,31);
 	private static final LocalDate startRegistrations = LocalDate.of(2023, Month.JULY,1);
-
+	
+	@Autowired
     private final RegistrationService registrationService;
 
     public RegistrationController(RegistrationService registrationService) {

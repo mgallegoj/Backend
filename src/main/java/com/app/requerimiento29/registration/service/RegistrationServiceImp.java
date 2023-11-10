@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
@@ -38,8 +39,11 @@ public class RegistrationServiceImp implements RegistrationService{
     private static final double taxCoefficientStratum6 = 0.011;
     private static final double taxCoefficientNoResidential = 0.01;
 
+    @Autowired
     private final PropertyRepository propertyRepository;
+    @Autowired
     private final OwnerRepository ownerRepository;
+    @Autowired
     private final RestTemplate restTemplate;
 
 

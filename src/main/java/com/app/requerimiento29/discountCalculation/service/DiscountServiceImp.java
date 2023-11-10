@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.requerimiento29.discountCalculation.Model.DiscountRegistrationModel;
@@ -16,9 +17,11 @@ import com.app.requerimiento29.discountCalculation.repository.StrataDiscountRepo
 
 @Service
 public class DiscountServiceImp implements DiscountService{
-
+    @Autowired
     private final DiscountRegistrationRepository discountRepository;
+    @Autowired
     private final SpecialDiscountRepository specialDiscountRepository;
+    @Autowired
     private final StrataDiscountRepository strataDiscountRepository;
     
     public DiscountServiceImp(DiscountRegistrationRepository discountRepository, SpecialDiscountRepository specialDiscountRepository, StrataDiscountRepository strataDiscountRepository) {

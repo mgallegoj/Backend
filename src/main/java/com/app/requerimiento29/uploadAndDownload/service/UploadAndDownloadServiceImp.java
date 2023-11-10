@@ -11,6 +11,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -32,6 +33,8 @@ public class UploadAndDownloadServiceImp implements UploadAndDownloadService{
     private String createUserURL;
     private String createPropertyURL;
     private String consultURL;
+    
+    @Autowired
     private final RestTemplate restTemplate;
 
     public UploadAndDownloadServiceImp(RestTemplate restTemplate) {
