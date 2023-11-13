@@ -86,8 +86,8 @@ public class RegistrationController {
 	}
 
     private void isWithinRegistrationPeriod() {
-        //LocalDate todayDate = LocalDate.now();
-		LocalDate todayDate = LocalDate.of(2023, Month.JULY ,13);
+        LocalDate todayDate = LocalDate.now();
+		//LocalDate todayDate = LocalDate.of(2023, Month.JULY ,13);
         if (todayDate.isBefore(startRegistrations) || todayDate.isAfter(endRegistrations)) {
             throw new IllegalStateException("Lo sentimos, ya no se aceptan más registros.");
         }
