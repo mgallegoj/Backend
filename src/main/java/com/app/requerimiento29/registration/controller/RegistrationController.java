@@ -85,16 +85,6 @@ public class RegistrationController {
 		}
 	}
 
-	@GetMapping("/properties/{city}-{address}")
-	public ResponseEntity<PropertyModel> getProperty(@PathVariable String city, @PathVariable String address) {
-		PropertyModel property = registrationService.findPropertyByCityAndAddress(city.toLowerCase(), address.toLowerCase());
-	    if (property != null) {
-	        return new ResponseEntity<>(property, HttpStatus.OK);
-	    } else {
-	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	    } 
-	}
-
     private void isWithinRegistrationPeriod() {
         //LocalDate todayDate = LocalDate.now();
 		LocalDate todayDate = LocalDate.of(2023, Month.JULY ,13);

@@ -7,6 +7,5 @@ import com.app.requerimiento29.registration.model.PropertyModel;
 
 @Repository
 public interface PropertyRepository extends JpaRepository<PropertyModel, Long>{
-	PropertyModel findByCityAndAddress(String city, String address);
 	Boolean existsPropertyByCityAndAddress(String city, String address);
 }

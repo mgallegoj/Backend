@@ -100,8 +100,8 @@ public class RegistrationServiceImp implements RegistrationService{
 
 	@Override
 	public PropertyModel createProperty(PropertyModel property) {
-        //LocalDate todayDate = LocalDate.now();
-        LocalDate todayDate = LocalDate.of(2023, Month.JULY ,13);
+        LocalDate todayDate = LocalDate.now();
+        //LocalDate todayDate = LocalDate.of(2023, Month.JULY ,13);
         String ownerDocument = property.getOwner().getDocument();
         OwnerModel existingOwner = getOwner(ownerDocument);
 
@@ -174,11 +174,6 @@ public class RegistrationServiceImp implements RegistrationService{
                         
         return newProperty;
 	}
-	
-    @Override
-    public PropertyModel findPropertyByCityAndAddress(String city, String address) {
-        return propertyRepository.findByCityAndAddress(city.toLowerCase(), address.toLowerCase());
-    }
     
     @Override
     public Boolean existsPropertyByCityAndAddress(String city, String address) {

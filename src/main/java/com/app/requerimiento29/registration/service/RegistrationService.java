@@ -6,7 +6,6 @@ import com.app.requerimiento29.registration.model.PropertyModel;
 public interface RegistrationService {
     OwnerModel createOwner(OwnerModel owner) throws IllegalArgumentException;
 	OwnerModel getOwner(String ownerId);
-    PropertyModel findPropertyByCityAndAddress(String city, String address);
 	Boolean existsPropertyByCityAndAddress(String city, String address);
 	PropertyModel createProperty(PropertyModel property);
 }
